@@ -14,10 +14,10 @@ public class NumberReverser {
 		System.out.println("This program takes a postive whole number and returns it in reverse.\n");
 
 		// call method to get user input
-		getInput();
+		this.getInput();
 	}
 
-	public static void getInput() {
+	public void getInput() {
 		// while loop that runs until an long is entered
 		while (true) {
 			// creates a new scanner each time the while loop executes
@@ -29,7 +29,7 @@ public class NumberReverser {
 				// checking to see if number is positive
 				if (userInput >= 0) {
 					// calling reverseNumber method on the user input long
-					reverseNumber(userInput);
+					this.reverseNumber(userInput);
 					sc.close();
 					break;
 				} else {
@@ -47,7 +47,7 @@ public class NumberReverser {
 		}
 	}
 
-	public static void reverseNumber(long number) {
+	public void reverseNumber(long number) {
 
 		// converting long input into string
 		String tempString = Long.toString(number);
