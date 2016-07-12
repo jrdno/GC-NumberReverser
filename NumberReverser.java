@@ -11,7 +11,7 @@ public class NumberReverser {
 
 		// intoduction to program for user
 		System.out.println("Weclome to the Number Reverser!");
-		System.out.println("This program takes a postive whole number and returns it in reverse.\n");
+		System.out.println("This program takes a whole number and returns it in reverse.\n");
 
 		// call method to get user input
 		this.getInput();
@@ -23,24 +23,16 @@ public class NumberReverser {
 			// creates a new scanner each time the while loop executes
 			Scanner sc = new Scanner(System.in);
 			try {
-				System.out.print("Please enter a positive whole number: ");
+				System.out.print("Please enter a whole number: ");
 				Long userInput = sc.nextLong();
 
-				// checking to see if number is positive
-				if (userInput >= 0) {
-					// calling reverseNumber method on the user input long
-					this.reverseNumber(userInput);
-					sc.close();
-					break;
-				} else {
-					// error message for negative number
-					System.out.println("The number you entered is negative. Please enter a positive number.\n");
-					continue;
-				}
+				// call the reverse number method to flip and print result
+				this.reverseNumber(userInput);
+				sc.close();
+				break;
 
 			} catch (InputMismatchException e) {
-				// this catch statement catches non-longs and lets the user try
-				// again
+				// this catches non-longs and lets the user try again
 				System.out.println("Oops. That's not an number. Please try again.\n");
 				continue;
 			}
@@ -54,11 +46,16 @@ public class NumberReverser {
 
 		// creating StringBuilder to easily reverse the tempString
 		StringBuilder sb = new StringBuilder(tempString);
+		int len = sb.length();
 		sb.reverse();
 
-		// printing result and hilarious joke
-		System.out.println("Your reversed number: " + sb);
+		// accommodating negative numbers, need to shift the '-' if negative
+		if (sb.charAt(len - 1) == '-') {
+			System.out.println("Your reversed number: " + "-" + sb.substring(0, len - 1));
+		} else {
+			System.out.println("Your reversed number: " + sb);
+		}
+
 		System.out.println("\nThanks for your business.");
-		System.out.println("Please enter your credit card number:");
 	}
 }
