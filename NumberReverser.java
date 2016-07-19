@@ -1,15 +1,11 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- * Written by Jordan O'Neill July 10, 2016 Prework assignment 1 for Grand Circus
- */
-
 public class NumberReverser {
 
 	public NumberReverser() {
 
-		// intoduction to program for user
+		// introduction to program for user
 		System.out.println("Weclome to the Number Reverser!");
 		System.out.println("This program takes a whole number and returns it in reverse.\n");
 
@@ -18,7 +14,7 @@ public class NumberReverser {
 	}
 
 	public void getInput() {
-		// while loop that runs until an long is entered
+		// while loop that runs until a long is entered
 		while (true) {
 			// creates a new scanner each time the while loop executes
 			Scanner sc = new Scanner(System.in);
