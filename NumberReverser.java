@@ -14,7 +14,7 @@ public class NumberReverser {
 	}
 
 	public void getInput() {
-		// while loop that runs until a long is entered
+		// while-loop that runs until a long is entered
 		while (true) {
 			// creates a new scanner each time the while loop executes
 			Scanner sc = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class NumberReverser {
 				System.out.print("Please enter a whole number: ");
 				Long userInput = sc.nextLong();
 
-				// call the reverse number method to flip and print result
+				// call the reverseNumber method to flip number and print result
 				this.reverseNumber(userInput);
 				sc.close();
 				break;
@@ -51,7 +51,5 @@ public class NumberReverser {
 		} else {
 			System.out.println("Your reversed number: " + sb);
 		}
-
-		System.out.println("\nThanks for your business.");
 	}
 }
