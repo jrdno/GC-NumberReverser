@@ -13,12 +13,14 @@ public class NumberReverser {
 	}
 
 	public void getInput() {
-
+		
+		// create scanner to collect input
 		Scanner sc = new Scanner(System.in);
 		String userInput;
 
-		System.out.print("Enter a whole number: ");
+		System.out.print("Enter a whole number: ");		
 
+		// while loop that runs until we have a valid long
 		while (!sc.hasNextLong()) {
 			userInput = sc.next();
 			System.out.println("That's not a whole number. Try again.\n");
@@ -26,7 +28,10 @@ public class NumberReverser {
 		}
 
 		userInput = sc.next();
+		
 		sc.close();
+		
+		// calling method to reverse the input
 		this.reverseNumber(userInput);
 
 	}
