@@ -5,9 +5,9 @@ public class NumberReverser {
 	public NumberReverser() {
 		System.out.println("Weclome to the Number Reverser!");
 		System.out.println("This program takes a whole number and returns it in reverse.\n");
-
-		// call reverseNumber on userInput
+		
 		this.reverseNumber(this.getInput());
+		//this.remainderReverse(this.getInput());
 	}
 
 	private String getInput() {
@@ -19,7 +19,6 @@ public class NumberReverser {
 
 		// this will run once there is an input
 		while (sc.hasNext()) {
-			
 			if (sc.hasNextLong()) {
 				userInput = sc.next();
 				break;
@@ -45,5 +44,30 @@ public class NumberReverser {
 		} else {
 			System.out.println("Your reversed number: " + sb);
 		}
+	}
+
+	/*
+	 * Created this method to reverse the number using math rather than
+	 * StringBuilder
+	 */
+
+	private void remainderReverse(String str) {
+		int len = 0;
+
+		if (str.charAt(0) == '-') {
+			len = str.length() - 1;
+		} else {
+			len = str.length();
+		}
+
+		Long num = Long.decode(str);
+		Long result = (long) 0;
+
+		for (int i = 0; i < len; i++) {
+			Long temp = num % 10;
+			result = (result * 10) + temp;
+			num /= 10;
+		}
+		System.out.println("Your reversed number: " + result);
 	}
 }
