@@ -3,42 +3,37 @@ import java.util.Scanner;
 public class NumberReverser {
 
 	public NumberReverser() {
-
-		// introduction to program for user
 		System.out.println("Weclome to the Number Reverser!");
 		System.out.println("This program takes a whole number and returns it in reverse.\n");
 
-		// call method to get user input
-		this.getInput();
+		// call reverseNumber on userInput
+		this.reverseNumber(this.getInput());
 	}
 
-	public void getInput() {
-
+	private String getInput() {
 		// create scanner to collect input and a result string
 		Scanner sc = new Scanner(System.in);
-		String userInput;
+		String userInput = null;
 
 		System.out.print("Enter a whole number: ");
 
-		// while loop that runs until valid long is next value in scanner
-		while (!sc.hasNextLong()) {
-			userInput = sc.next();
-			System.out.println("That's not a whole number. Try again.\n");
+		// this will run once there is an input
+		while (sc.hasNext()) {
+			
+			if (sc.hasNextLong()) {
+				userInput = sc.next();
+				break;
+			}
+			// advances scanner, allows for new input
+			sc.next();
+			System.out.println("That is not a whole number. Try again. \n");
 			System.out.print("Enter a whole number: ");
 		}
-
-		// must set userInput as next value in scanner to get the long
-		userInput = sc.next();
-
 		sc.close();
-
-		// calling method to reverse the input
-		this.reverseNumber(userInput);
-
+		return userInput;
 	}
 
-	public void reverseNumber(String input) {
-
+	private void reverseNumber(String input) {
 		// creating StringBuilder to easily reverse the number
 		StringBuilder sb = new StringBuilder(input);
 		int len = sb.length();

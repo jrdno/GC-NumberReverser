@@ -1,11 +1,11 @@
 
-public class App {
+public class ReverserApp {
 	
-	public App() {
+	public ReverserApp() {
 		new NumberReverser();
 	}
 	
 	public static void main(String[] argv) {
-		new App();
+		new ReverserApp();
 	}
 }
